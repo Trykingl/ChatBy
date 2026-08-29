@@ -247,3 +247,71 @@ body {
   font-size: 13px;
   color: #777;
 }
+
+.app.splash {
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 100px;
+}
+
+.logo-box {
+  width: 80px;
+  height: 80px;
+  background: #000;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.splash-content h1 {
+  font-size: 36px;
+  color: #000;
+}
+
+.splash-content h1 span {
+  color: #00C9C2;
+}
+
+.tagline {
+  color: #777;
+  font-size: 15px;
+}
+
+.splash-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: #00C9C2;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: white;
+  color: #00C9C2;
+  border: 2px solid #00C9C2;
+  padding: 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
