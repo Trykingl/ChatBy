@@ -216,3 +216,34 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
+
+.settings-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.settings-item .icon {
+  font-size: 22px;
+}
+
+.settings-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-info .title {
+  font-weight: bold;
+}
+
+.settings-info .subtitle {
+  font-size: 13px;
+  color: #777;
+}
