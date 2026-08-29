@@ -1,0 +1,24 @@
+{
+  "name": "chatby",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/Trykingl/ChatBy#readme",
+  "bugs": {
+    "url": "https://github.com/Trykingl/ChatBy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trykingl/ChatBy.git"
+  },
+  "license": "MIT",
+  "author": "VoidFrame",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
