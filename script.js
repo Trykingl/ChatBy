@@ -41,8 +41,8 @@ function renderMessages() {
   messagesContainer.innerHTML = '';
   messages.forEach(msg => {
     const bubble = document.createElement('div');
-    bubble.className = 'message ${msg.sender}';
-    bubble.innerHTML = '<p>${msg.text}</p><span class="msg-time">${msg.time}</span>';
+    bubble.className = `message ${msg.sender}`;
+    bubble.innerHTML = `<p>${msg.text}</p><span class="msg-time">${msg.time}</span>`;
     messagesContainer.appendChild(bubble);
   });
   messagesContainer.scrollTop = messagesContainer.scrollHeight
@@ -58,7 +58,7 @@ if (sendBtn) {
     const text = messageInput.value.trim();
     if (text === '') return;
     const now = new Date();
-    const time = now.getHours().toString().padStart(2, '0') + ':' = now.getMinutes().toString().padStart(2, '0');
+    const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
     messages.push({ text: text, sender: 'sent', time: time });
     renderMessages();
     messageInput.value = '';
