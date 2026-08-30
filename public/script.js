@@ -36,9 +36,18 @@ let messages = [
 
 const messagesContainer = document.getElementById('messages');
 
-function renderMessages() {
+async function loadMessages() {
   if (!messagesContainer) return;
+
+  const res = await fetch('/messages');
+  const messages = await res.json();
+
+  renderMessages(messages);
+}
+
+function renderMessages() {
   messagesContainer.innerHTML = '';
+
   messages.forEach(msg => {
     const bubble = document.createElement('div');
     bubble.className = `message ${msg.sender}`;
@@ -47,20 +56,26 @@ function renderMessages() {
   });
   messagesContainer.scrollTop = messagesContainer.scrollHeight
 }
-renderMessages();
+loadMessages();
 
 //wiring up the send button and input box
 const messageInput = document.querySelector('.input-bar input');
 const sendBtn = document.querySelector('.input-bar .send');
 
 if (sendBtn) {
-  sendBtn.addEventListener('click', () => {
+  sendBtn.addEventListener('click', async () => {
     const text = messageInput.value.trim();
     if (text === '') return;
+
     const now = new Date();
     const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-    messages.push({ text: text, sender: 'sent', time: time });
-    renderMessages();
+    await fetch('/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: text, sender: 'sent', time: time })
+    });
+
     messageInput.value = '';
-  })
+    loadMessages()
+  });
 }
