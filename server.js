@@ -54,7 +54,7 @@ app.post('/signup', async (req, res) => {
   const hashedpassword = await bcrypt.hash(password, 10);
 
   try {
-    db.sendStatus('INSERT INTO users (username, password) VALUES (?, ?)')
+    db.prepare('INSERT INTO users (username, password) VALUES (?, ?)')
       .run(username, hashedpassword);
     res.sendStatus(201);
   } catch (err) {
