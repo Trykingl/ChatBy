@@ -7,7 +7,7 @@ const PORT = 3000;
 app.use(express.static('public'));
 app.use(express.json());
 
-const db = new Database(chatby.db);
+const db = new Database('chatby.db');
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS messages (
