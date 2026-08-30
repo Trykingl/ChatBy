@@ -38,7 +38,7 @@ async function loadMessages() {
   renderMessages(messages);
 }
 
-function renderMessages() {
+function renderMessages(messages) {
   messagesContainer.innerHTML = '';
 
   messages.forEach(msg => {
