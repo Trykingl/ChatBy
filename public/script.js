@@ -27,13 +27,6 @@ navItems.forEach(item => {
   });
 });
 
-// Fake message data
-let messages = [
-  { text: "HEY EVERY! IT'S ME, SPAMTON G. SPAMTON!", sender: "received", time: "15:10" },
-  { text: "hey you good", sender: "sent", time: "15:12" },
-  { text: "pepis", sender: "received", time: "15:13" }
-];
-
 const messagesContainer = document.getElementById('messages');
 
 async function loadMessages() {
