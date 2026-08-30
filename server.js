@@ -23,14 +23,14 @@ app.get('/messages', (req, res) => {
   res.json(messages);
 });
 
-app.post('messages', (req, res) => {
+app.post('/messages', (req, res) => {
   const { text, sender, time } = req.body;
 
   if (!text || !sender || !time) {
     return res.status(400).json({ error: 'Missing feilds' });
   }
 
-  db.prepare('INSERT INTO messages (text, sender, time) VALUE (?, ?, ?)')
+  db.prepare('INSERT INTO messages (text, sender, time) VALUES (?, ?, ?)')
     .run(text, sender, time);
 
   res.sendStatus(201);
